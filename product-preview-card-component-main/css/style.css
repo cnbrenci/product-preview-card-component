@@ -1,7 +1,31 @@
+:root {
+  --pure-white: #FFF;
+  --cream: #F2EAE2;
+  --aurometal-saurus: #6C7289;
+  --deep-aquamarine: #3D8168;
+  --deeper-aquamarine: #1A4032;
+  --gunmetal: #1C232B;
+
+  --background-color: var(--cream);
+  --cart-button-color: var(--deep-aquamarine);
+  --hover-color: var(--deeper-aquamarine);
+
+  --font-display: 3.2rem;
+  --font-display-line-height: 3.2rem;
+  --font-body: 1.4rem;
+  --font-body-line-height: 2.3rem;
+  --font-button-text: 1.4rem;
+  --font-overline: 1.2rem;
+  --font-overline-letter-spacing: .5rem;
+}
+
 html {
     /* 62.5% of 16px browser font size is 10px */
     font-size: 62.5%;
-  }
+
+    font-family: 'Fraunces', serif;
+    font-family: 'Montserrat', sans-serif;
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
