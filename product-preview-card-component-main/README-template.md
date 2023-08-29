@@ -61,27 +61,55 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+I learned about using different images depending on the size of the viewport.
+[This](https://aboutbits.it/blog/2021-08-04-responsive-images) article breaks down a few options.
+I first tried using `img` `srcset` but this approach is only good if the image is the same at different sizes, just different resolutions.
+Since in this project, the image is cropped differently for the different sizes, it doesn't work. The image doesn't change to 
+the correct crop as you resize in a chromium browser. 
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<section class="hero">
+  <img 
+    src="./images/image-product-mobile.jpg" 
+    alt="Flat lay of perfume surrounded by leaves" 
+    sizes="(min-width: 600px) 300px, (max-width: 599px) 343px"
+    srcset="./images/image-product-desktop.jpg 300w, ./images/image-product-mobile.jpg 343w"
+  />
+</section>
 ```
+
+A better option is using the `<picture>` tag since this gives finer control of which photo to use for different screen size.
+
+```html
+<section class="hero">
+  <picture>
+    <source srcset="images/image-product-desktop.jpg" media="(min-width: 600px)" />
+    <img src="images/image-product-mobile.jpg" alt="Flat lay of perfume surrounded by leaves" />
+  </picture>
+</section>
+```
+
+Note that the CSS is selecting on `img` rather than `picture` to apply styles:
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+.hero img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+Other handy trick to center the component on the screen which I've used multiple times now: 
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+ ```css
+ body {
+  display: grid;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+ }
+ ```
+
 
 ### Continued development
 

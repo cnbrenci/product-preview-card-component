@@ -14,9 +14,12 @@
   <title>Frontend Mentor | Product preview card component</title>
 </head>
 <body>
-  <div class="outer-grid">
-    <section class="mobile-hero">
-      <img src="./images/image-product-mobile.jpg" alt="Flat lay of perfume surrounded by leaves" />
+  <div class="card-component">
+    <section class="hero">
+      <picture>
+        <source srcset="images/image-product-desktop.jpg" media="(min-width: 600px)" />
+        <img src="images/image-product-mobile.jpg" alt="Flat lay of perfume surrounded by leaves" />
+      </picture>
     </section>
   
     <section class="product-info">
