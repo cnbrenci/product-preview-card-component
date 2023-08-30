@@ -6,10 +6,6 @@
   --deeper-aquamarine: #1A4032;
   --gunmetal: #1C232B;
 
-  --background-color: var(--cream);
-  --cart-button-color: var(--deep-aquamarine);
-  --hover-color: var(--deeper-aquamarine);
-
   --font-display: 3.2rem;
   --font-display-line-height: 3.2rem;
   --font-body: 1.4rem;
@@ -103,10 +99,21 @@ button {
   width: 100%;
   height: 4.8rem;
   margin: 2rem 0 0 0;
+  font-family: var(--font-family-default);
+  font-size: var(--font-button-text);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover {
   background-color: var(--deeper-aquamarine);
+  cursor: pointer;
+}
+
+button img {
+  padding: 1.2rem;
 }
 
 footer {
